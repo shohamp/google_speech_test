@@ -16,6 +16,9 @@ for i in xrange(100):
                                      % (TOKEN, json_path), shell=True)
     if 'the time' in result.lower():
         success += 1
+    else:
+        print
+        print result
 
 print
 print "Succeeded %d times out of 100" % success
