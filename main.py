@@ -11,10 +11,10 @@ for i in xrange(100):
     print "Running attempt %d   \r" % (i + 1),
     sys.stdout.flush()
     result = subprocess.check_output('curl -s -k -H "Content-Type: application/json" '
-                                  '-H "Authorization: Bearer %s" https://speech.googleapis.'
-                                  'com/v1beta1/speech:syncrecognize -d @%s'
-                                  % (TOKEN, json_path), shell=True)
-    if 'how old is the Brooklyn Bridge' in result:
+                                     '-H "Authorization: Bearer %s" https://speech.googleapis.'
+                                     'com/v1beta1/speech:syncrecognize -d @%s'
+                                     % (TOKEN, json_path), shell=True)
+    if 'the time' in result.lower():
         success += 1
 
 print
